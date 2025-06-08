@@ -1,0 +1,36 @@
+{% extends 'student/studentbase.html' %}
+{% block content %}
+{% load static %}
+
+<h2>Time Up!</h2>
+<p>Your exam time has expired, and the exam has been auto-submitted.</p>
+
+<!-- Auto-submit exam when page loads -->
+<form id="autoSubmitForm" method="POST" action="{% url 'calculate-marks' %}/">
+    {% csrf_token %}
+    <input type="hidden" name="auto_submit" value="1">
+</form>
+
+<script>
+    function saveAns() {
+        var ele = document.getElementsByTagName('input');
+        for (var i = 0; i < ele.length; i++) {
+            if (ele[i].type === "radio" && ele[i].checked) {
+                document.cookie = ele[i].name + "=" + ele[i].value + ";path=/";
+            }
+        }
+    }
+
+    // Debugging to check if form submission runs
+    function autoSubmitExam() {
+        console.log("Saving answers...");
+        saveAns();
+        console.log("Submitting form...");
+        document.getElementById("autoSubmitForm").submit();
+    }
+
+    // Auto-submit when page loads
+    window.onload = autoSubmitExam;
+</script>
+
+{% endblock %}
