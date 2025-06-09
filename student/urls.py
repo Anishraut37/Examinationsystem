@@ -5,6 +5,7 @@ from django.contrib.auth.views import LoginView
 urlpatterns = [
     path('studentclick/', views.studentclick_view, name='studentclick'),
     path('student-signup/', views.student_signup_view, name='student-signup'),
+    path('studentlogin/', LoginView.as_view(template_name='student/studentlogin.html'), name='studentlogin'),  # ✅ Added
     path('student-dashboard/', views.student_dashboard_view, name='student-dashboard'),
     path('student-exam/', views.student_exam_view, name='student-exam'),
     path('take-exam/<int:pk>/', views.take_exam_view, name='take-exam'),
