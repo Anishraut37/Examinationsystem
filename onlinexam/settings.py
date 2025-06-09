@@ -139,10 +139,10 @@ LOGIN_REDIRECT_URL = '/afterlogin'
 
 # Email settings - use Gmail SMTP, update password as environment variable for security
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_USE_TLS = True
-EMAIL_PORT = 587
-EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', 'rautanish1901@gmail.com')
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', '')  # Use App Password if 2FA enabled
-EMAIL_RECEIVING_USER = ['rautanish1901@gmail.com']  # Receiver email(s)
+#EMAIL_HOST = 'smtp.gmail.com'
+#EMAIL_USE_TLS = True
+#EMAIL_PORT = 587
+#EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', 'rautanish1901@gmail.com')
+#EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', '')  # Use App Password if 2FA enabled
+#EMAIL_RECEIVING_USER = ['rautanish1901@gmail.com']  # Receiver email(s)
 
