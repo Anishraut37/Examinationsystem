@@ -36,9 +36,9 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '@k0#p3kidu)yaaa3u1hplxz)f@^6xi
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['examinationsystem-3.onrender.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['examinationsystem-4.onrender.com',]
 
-render_host = os.environ.get('examinationsystem-3.onrender.com')
+render_host = os.environ.get('examinationsystem-4.onrender.com')
 if render_host:
     ALLOWED_HOSTS.append(render_host)
 
@@ -94,9 +94,14 @@ WSGI_APPLICATION = 'onlinexam.wsgi.application'
 
 # Database
 # Use dj_database_url to configure DB from DATABASE_URL env variable (Render provides this for Postgres)
+
+
 DATABASES = {
-    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
+    'default': dj_database_url.config(
+        default='sqlite:///db.sqlite3'  # Fallback to SQLite locally
+    )
 }
+
 
 
 # Password validation
