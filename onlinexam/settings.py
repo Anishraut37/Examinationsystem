@@ -38,7 +38,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['examinationsystem-4.onrender.com',]
 
-render_host = os.environ.get('postgresql://examination_db_2zjp_user:UEiFU2bZxkrY9J2iAAs9izvGMyvH88ZR@dpg-d135l16mcj7s73808ed0-a/examination_db_2zjp')
+render_host = os.environ.get('examinationsystem-4.onrender.com')
 if render_host:
     ALLOWED_HOSTS.append(render_host)
 
